@@ -38,4 +38,15 @@
   <p><b>Step 9.3 - </b>Kubernetes Master-Slave setup</p>
   <p><b>Step 9.4 - </b>Install Helm & Monitoring K8S using Prometheus and Grafana</p>
   <p><b>Step 9.5 - </b>Kubernetes Deployment</p>
+
+  <h2><b>Step 1 - Launch an Ubuntu 22.04 instance for Jenkins</b></h2>
+  <p><b>Log into AWS Console: Sign in to your AWS account.</b></p>
+  <p><b>Launch an Instance:</b></p>
+  <p><b>Choose "EC2" from services. Click "Launch Instance."</b></p>
+  <p><b>Choose an AMI: Select an Ubuntu image.</b></p>
+  <p><b>Choose an Instance Type: Pick "t2.large."</b></p>
+  <p><b>Key Pair: Choose an existing key pair or create a new one.</b></p>
+  <p><b>Configure Security Group: Create a new security group. Add rules for HTTP, and HTTPS, and open all ports for learning purposes.</b></p>
+  <img src="./public/assets/CICD-Project-1.png" alt="CICD-Project-1.png">
+  
 </div>
