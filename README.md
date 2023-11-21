@@ -125,14 +125,54 @@
   <p><b>Jenkins Dashboard</b></p>
   <img src="./public/assets/Jenkins-8.png" alt="Jenkins-8.png">
 
+  <h2><b>Step 2.1 - Install Docker on the Jenkins machine</b></h2>
+  <p><b>Run the below commands to install the docker</b></p>
+  
+  ```sh
+  # Update the package lists for upgrades and new package installations
+  sudo apt-get update
+  
+  # Install Docker
+  sudo apt-get install docker.io -y
+  
+  # Add the current user (assumed to be 'ubuntu') to the 'docker' group
+  sudo usermod -aG docker $USER
+  
+  # Apply the new group membership without logging out and back in
+  newgrp docker
+  
+  # Change the permissions of the Docker socket to allow all users to access it
+  sudo chmod 777 /var/run/docker.sock
+  ```
+
+  <p><b>After the docker installation, we will create a Sonarqube container (Remember to add 9000 ports in the security group).</b></p>
+  <p><b>Run this command on your EC2 instance to create a SonarQube container:</b></p>
+
+  ```sh
+  # Run SonarQube in a Docker container, mapping port 9000 on the host to port 9000 in the container
+  docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
+  ```
+  <p><b>Now copy the IP address of the ec2 instance</b></p>
+
+  ```sh
+  # This line seems to be an instruction to access SonarQube on the provided EC2 public IP at port 9000
+  # <ec2-public-ip:9000>
+  ```
+
+  <img src="./public/assets/SonarQube-1.png" alt="SonarQube-1.png">
+  <p><b>Enter username and password, click on login and change password</b></p>
+
+  ```sh
+  # These lines indicate the default SonarQube credentials, which are typically changed during initial setup
+  # username admin
+  # password admin
+  ```
+  <img src="./public/assets/SonarQube-2.png" alt="SonarQube-2.png">
+  <p><b>Update New password, This is Sonar Dashboard.</b></p>
+  <img src="./public/assets/SonarQube-3.png" alt="SonarQube-3.png">
+
 
   
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
