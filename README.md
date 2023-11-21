@@ -294,7 +294,53 @@
   <h2><b>Step 3.2 - Install the Splunk app for Jenkins</b></h2>
   <p><b>In Splunk Dashboard</b></p>
   <p><b>Click on Apps --> Find more apps</b></p>
-  <img src="./public/assets/Splunk-2.png" alt="Splunk-2.png">
+  <img src="./public/assets/Splunk-4.png" alt="Splunk-4.png">
+  <p><b>Search for Jenkins in the Search bar</b></p>
+  <p><b>You will get the Splunk app for Jenkins and click on install</b></p>
+  <img src="./public/assets/Splunk-5.png" alt="Splunk-5.png">
+  <p><b>You will be prompted to provide your Splunk credentials. That's why we created a Splunk account</b></p>
+  <img src="./public/assets/Splunk-6.png" alt="Splunk-6.png">
+  <p><b>Click on Agree and install</b></p>
+  <p><b>Now click on Go home</b></p>
+  <img src="./public/assets/Splunk-7.png" alt="Splunk-7.png">
+  <p><b>On the homepage of Splunk, you will see Jenkins has been added</b></p>
+  <img src="./public/assets/Splunk-8.png" alt="Splunk-8.png">
+  <p><b>In the Splunk web interface, go to Settings > Data Inputs</b></p>
+  <img src="./public/assets/Splunk-9.png" alt="Splunk-9.png">
+  <p><b>Click on HTTP Event Collector.</b></p>
+  <img src="./public/assets/Splunk-10.png" alt="Splunk-10.png">
+  <p><b>Click on Global Settings</b></p>
+  <img src="./public/assets/Splunk-11.png" alt="Splunk-11.png">
+  <p><b>Set All tokens to enabled</b></p>
+  <p><b>Uncheck SSL enable</b></p>
+  <p><b>Use 8088 port and click on save</b></p>
+  <img src="./public/assets/Splunk-12.png" alt="Splunk-12.png">
+  <p><b>Now click on New token</b></p>
+  <img src="./public/assets/Splunk-13.png" alt="Splunk-13.png">
+  <p><b>Provide a Name and click on the next</b></p>
+  <img src="./public/assets/Splunk-14.png" alt="Splunk-14.png">
+  <p><b>Click Review</b></p>
+  <img src="./public/assets/Splunk-15.png" alt="Splunk-15.png">
+  <p><b>Click Submit</b></p>
+  <img src="./public/assets/Splunk-16.png" alt="Splunk-16.png">
+  <p><b>Click Start searching</b></p>
+  <img src="./public/assets/Splunk-17.png" alt="Splunk-17.png">
+  <p><b>Now let's copy our token again</b></p>
+  <p><b>In the Splunk web interface, go to Settings -> Data Inputs.</b></p>
+  <img src="./public/assets/Splunk-18.png" alt="Splunk-18.png">
+  <p><b>Click on the HTTP event collector</b></p>
+  <img src="./public/assets/Splunk-19.png" alt="Splunk-19.png">
+  <p><b>Now copy your token and keep it safe</b></p>
+  <img src="./public/assets/Splunk-20.png" alt="Splunk-20.png">
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
