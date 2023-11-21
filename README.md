@@ -291,9 +291,10 @@
   <p><b>This is the Splunk Dashboard</b></p>
   <img src="./public/assets/Splunk-2.png" alt="Splunk-2.png">
 
-  <h2><b></b></h2>
-  <p><b></b></p>
-  <p><b></b></p>
+  <h2><b>Step 3.2 - Install the Splunk app for Jenkins</b></h2>
+  <p><b>In Splunk Dashboard</b></p>
+  <p><b>Click on Apps --> Find more apps</b></p>
+  <img src="./public/assets/Splunk-2.png" alt="Splunk-2.png">
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
