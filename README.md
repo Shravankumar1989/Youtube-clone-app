@@ -47,6 +47,38 @@
   <p><b>Choose an Instance Type: Pick "t2.large."</b></p>
   <p><b>Key Pair: Choose an existing key pair or create a new one.</b></p>
   <p><b>Configure Security Group: Create a new security group. Add rules for HTTP, and HTTPS, and open all ports for learning purposes.</b></p>
-  <img src="./public/assets/CICD-Project-1.png" alt="CICD-Project-1.png">
+  <img src="./public/assets/EC2-Instance-2.png" alt="EC2-Instance-2.png">
+  <p><b>Add Storage: Allocate at least 20 GB of storage.</b></p>
+  <p><b>Launch Instance: Review and launch the instance.</b></p>
+  <p><b>Access Your Instance: Use SSH to connect to your instance with the private key.</b></p>
+  <p><b>Keep in mind, that opening all ports is not recommended for production environments; it's just for educational purposes.</b></p>
+  <img src="./public/assets/EC2-Instance-1.png" alt="EC2-Instance-1.png">
+  <p><b>Connect to Your EC2 Instance and Install Jenkins:</b></p>
+  <p><b>Use MobaXterm or PuTTY to connect to your EC2 instance. Create a shell script named</b></p>
+
+  
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  
   
 </div>
