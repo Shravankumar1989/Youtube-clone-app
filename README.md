@@ -171,9 +171,15 @@
   <p><b>Update New password, This is Sonar Dashboard.</b></p>
   <img src="./public/assets/SonarQube-3.png" alt="SonarQube-3.png">
 
-
+  <h2><b>Step 2.1 - Install Docker on the Jenkins machine</b></h2>
+  <p><b>Run the below commands to install the docker</b></p>
   
-  <p><b></b></p>
+   ```sh
+  # These lines indicate the default SonarQube credentials, which are typically changed during initial setup
+  # username admin
+  # password admin
+  ```
+
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
