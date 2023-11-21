@@ -62,7 +62,8 @@
   ```
 
   ```sh
-  # Update the package lists for upgrades and new package installations
+#!/bin/bash
+# Update the package lists for upgrades and new package installations
 sudo apt update -y
 
 # Install the OpenJDK version 11 JDK package
