@@ -55,7 +55,40 @@
   <img src="./public/assets/EC2-Instance-1.png" alt="EC2-Instance-1.png">
   <p><b>Connect to Your EC2 Instance and Install Jenkins:</b></p>
   <p><b>Use MobaXterm or PuTTY to connect to your EC2 instance. Create a shell script named</b></p>
+  
+  ```sh
+  # Open the file 'install_jenkins.sh' in the 'vi' editor with superuser privileges
+  sudo vi install_jenkins.sh
+  ```
 
+  ```sh
+  # Update the package lists for upgrades and new package installations
+sudo apt update -y
+
+# Install the OpenJDK version 11 JDK package
+sudo apt install openjdk-11-jdk -y
+
+# Download the Jenkins repository signing key and save it to '/usr/share/keyrings/jenkins-keyring.asc'
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+
+# Add the Jenkins repository to the system's software sources list
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+# Update the package lists to include packages from the newly added Jenkins repository
+sudo apt-get update -y
+
+# Install Jenkins from the added repository
+sudo apt-get install jenkins -y
+
+# Start the Jenkins service
+sudo systemctl start jenkins
+
+# Check and display the status of the Jenkins service
+sudo systemctl status jenkins
+  ```
   
   <p><b></b></p>
   <p><b></b></p>
