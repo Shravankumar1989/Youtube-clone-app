@@ -332,17 +332,25 @@
   <img src="./public/assets/Splunk-19.png" alt="Splunk-19.png">
   <p><b>Now copy your token and keep it safe</b></p>
   <img src="./public/assets/Splunk-20.png" alt="Splunk-20.png">
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
+  <h2><b>Add Splunk Plugin in Jenkins</b></h2>
+  <p><b>Go to Jenkins dashboard</b></p>
+  <p><b>Click on Manage Jenkins --> Plugins --> Available plugins</b></p>
+  <p><b>Search for Splunk and install it.</b></p>
+  <img src="./public/assets/Jenkins-21.png" alt="Jenkins-21.png">
+  <p><b>Again Click on Manage Jenkins --> System</b></p>
+  <p><b>Search for Splunk</b></p>
+  <p><b>HTTP input host as SPLUNK PUBLIC IP</b></p>
+  <p><b>HTTP token that you generated in Splunk</b></p>
+  <p><b>Jenkins IP and apply.</b></p>
+  <img src="./public/assets/Jenkins-22.png" alt="Jenkins-22.png">
+  <p><b>Now go to Putty or Mobaxtreme and In Splunk machine run this command</b></p>
 
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
+   ```sh
+  # Allow traffic on port 8088 through the Ubuntu Firewall (UFW)
+  sudo ufw allow 8088
+  ```
+  <p><b>Now in the Jenkins dashboard Under Splunk click on Test connection</b></p>
+  
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
