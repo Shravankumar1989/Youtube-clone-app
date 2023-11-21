@@ -521,9 +521,77 @@
   <p><b>Go to Jenkins Dashboard</b></p>
   <p><b>Click on Manage Jenkins --> system</b></p>
   <p><b>Search for Global Pipeline Libraries and click on Add</b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
+  <img src="./public/assets/Jenkins-51.png" alt="Jenkins-51.png">
+  <p><b>Now Provide a name that we have to call in our pipeline</b></p>
+  <img src="./public/assets/Jenkins-52.png" alt="Jenkins-52.png">
+  <img src="./public/assets/Jenkins-53.png" alt="Jenkins-53.png">
+  <p><b>Click apply and save</b></p>
+  <h2><b>Step 5.4 - Run Pipeline</b></h2>
+  <p><b>Go to Jenkins Dashboard again & select the job and add the below pipeline</b></p>
+  
+  ```sh
+  // Import the Jenkins shared library with the specified name
+  @Library('Jenkins_shared_library') _
+  
+  // Define a map for associating build statuses with Slack message colors
+  def COLOR_MAP = [
+        'FAILURE' : 'danger',
+        'SUCCESS' : 'good'
+  ]
+  
+  // Define the pipeline
+  pipeline{
+      // Use any available agent
+      agent any
+  
+      // Define parameters for the pipeline
+      parameters {
+          // Add a choice parameter named 'action' with options 'create' and 'delete'
+          choice(name: 'action', choices: 'create\ndelete', description: 'Select create or destroy.')
+      }
+  
+      // Define the stages of the pipeline
+      stages{
+          // First stage: Clean the workspace
+          stage('clean workspace'){
+              steps{
+                  // Call the 'cleanWorkspace' method from the shared library
+                  cleanWorkspace()
+              }
+          }
+  
+          // Second stage: Checkout code from a Git repository
+          stage('checkout from Git'){
+              steps{
+                  // Call the 'checkoutGit' method from the shared library with repository URL and branch name
+                  checkoutGit('https://github.com/Aj7Ay/Youtube-clone-app.git', 'main')
+              }
+          }
+      }
+  
+      // Define post-build actions
+      post {
+          // Execute the following block after every build, regardless of the build result
+          always {
+              // Print a message in the Jenkins console log
+              echo 'Slack Notifications'
+  
+              // Send a notification to a Slack channel
+              slackSend (
+                  // Specify the channel to send the message to, replace '#channel name' with your actual channel name
+                  channel: '#channel name', 
+  
+                  // Set the color of the Slack message based on the build result using the COLOR_MAP
+                  color: COLOR_MAP[currentBuild.currentResult],
+  
+                  // Compose the message with build details and a link to the build
+                  message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} \n build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}"
+              )
+          }
+      }
+  }
+
+  ```
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
