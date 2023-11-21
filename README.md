@@ -23,7 +23,7 @@
   <p><b>Restart Both Splunk and Jenkins</b></p>
   <p><b>Step 4.1 - </b>Integrate Slack for Notifications</p>
   <p><b>Step 4.2 - </b>Install the Jenkins CI app on Slack</p>
-  <p><b>Install Slack Notification Plugin in Jenkins</p>
+  <p><b>Install Slack Notification Plugin in Jenkins</b></p>
   <p><b>Step 5.1 - </b>Start Job</p>
   <p><b>Step 5.2 - </b>Create a Jenkins shared library in GitHub</p>
   <p><b>Step 5.3 - </b>Add Jenkins shared library to Jenkins system</p>
