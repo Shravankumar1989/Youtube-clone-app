@@ -209,8 +209,96 @@
   ```
 
   <p><b>This will install Trivy on our Jenkins machine.</b></p>
+
+  <h2><b>Step 3.1 - Launch an Ubuntu instance for Splunk</b></h2>
+  <p><b>Step 1: Launch Instances</b></p>
+  <ol>
+    <li>Log in to your AWS console or your chosen cloud provider.</li>
+    <li>Navigate to the EC2 service and launch Ubuntu 22.04 instances. Ensure you select T2.medium as the instance type and allocate 24GB of storage to each instance.</li>
+  </ol>
+  <p><b>Step 2: Install Splunk</b></p>
+  <ol>
+    <li>At this point, the first machine is set up with Jenkins. You can now move to the second machine and proceed with the installation of Splunk.</li>
+    <li>Connect to your second instance using Putty or Mobaxtreme. To download and install Splunk on your Ubuntu instance use the wget command, use the following command:</li>
+  </ol>
   
+  ```sh
+  # Download the Splunk package
+  wget -O splunk-9.1.1-64e843ea36b1-linux-2.6-amd64.deb "https://download.splunk.com/products/splunk/releases/9.1.1/linux/splunk-9.1.1-64e843ea36b1-linux-2.6-amd64.deb"
+  ```
+  <p><b>To Depackage the Splunk use the below command</b></p>
+
+  ```sh
+  # Install the downloaded Splunk package
+  sudo dpkg -i splunk-9.1.1-64e843ea36b1-linux-2.6-amd64.deb
+  ```
+
+  ```sh
+  # Enable Splunk to start at boot
+  sudo /opt/splunk/bin/splunk enable boot-start
+  ```
+
+  <p><b>By running this command, you ensure that Splunk Enterprise is configured to start automatically when your Ubuntu system boots, allowing you to seamlessly integrate it into your workflow.</b></p>
+  <p><b>Please note that after running this command, you should follow the on-screen prompts to accept the terms and complete the setup to 100%.</b></p>
+  <p><b>After completing the initial setup and accepting the terms, you'll be prompted to create an admin user.</b></p>
+  <p><b>Administrator Username: Choose a username for the admin account. This should be a unique and secure username.</b></p>
+  <p><b>Administrator Password: Set a strong and secure password for the admin account. It's important to choose a password that combines upper and lower-case letters, numbers, and special characters for enhanced security.</b></p>
+  <p><b>Confirm your password to ensure it matches the one you initially entered.</b></p>
+  <p><b>By creating an administrator username and password, you'll have full access to your Splunk instance, allowing you to configure and manage it effectively.</b></p>
+  <p><b>The command sudo ufw allow OpenSSH is used to allow incoming SSH traffic through the UFW (Uncomplicated Firewall) on your Ubuntu system. It's essential for enabling SSH access to your server.</b></p>
+
+  ```sh
+  # Allow OpenSSH through the firewall
+  sudo ufw allow openSSH
+  ```
+  <p><b>By running this command, you ensure that SSH access is permitted through your firewall, which is crucial for remote server management and administration.</b></p>
+  <p><b>The command sudo ufw allow 8000 is used to allow incoming network traffic on port 8000 through the UFW (Uncomplicated Firewall) on your Ubuntu system. 
+    It permits access to a specific port for network services or applications.</b></p>
+
+  ```sh
+  # Allow traffic on port 8000 through the firewall (commonly used by Splunk Web)
+  sudo ufw allow 8000
+  ```
+
+  <p><b>sudo ufw status: This command allows you to check the status of your UFW firewall. It will display information about whether the firewall is active, 
+    which rules are enabled, and whether it's set to allow or deny specific types of traffic.</b></p>
+  <p><b>sudo ufw enable: This command is used to enable the UFW firewall if it's not already active. Enabling the firewall ensures that the rules you've configured or will configure are enforced.</b></p>
+  <p><b>By running these commands, you can both check the current status of your firewall and activate it to apply the defined rules and settings.</b></p>
+
+  ```sh
+  # Display the current status of the firewall
+  sudo ufw status
+  
+  # Enable the firewall
+  sudo ufw enable
+  ```
+  <p><b>The command sudo /opt/splunk/bin/splunk start is used to start the Splunk Enterprise application on your system. When you run this command with superuser privileges (using sudo), it initiates the Splunk service, allowing you to begin using the Splunk platform for data analysis, monitoring, and other data-related tasks.</b></p>
+
+  ```sh
+  # Start the Splunk service
+  sudo /opt/splunk/bin/splunk start
+  ```
+
+  <p><b>After successfully starting your Splunk instance, you can now access its web interface to start exploring and analyzing your data.</b></p>
+  <p><b>Copy Your Splunk Instance Public IP Address: Navigate to your cloud provider's console and find the public IP address of your Splunk instance.</b></p>
+  <p><b>Log in with Your Credentials: You'll be prompted to log in with the administrator username and password you created during the setup process (typically using the command sudo /opt/splunk/bin/splunk enable boot-start).</b></p>
+  
+   ```sh
+  # This line seems to be an instruction to access Splunk on the provided public IP at port 8000
+  # <splunk-public-ip:8000>
+  ```
+  <img src="./public/assets/Splunk-1.png" alt="Splunk-1.png">
+  <p><b>This is the Splunk Dashboard</b></p>
+  <img src="./public/assets/Splunk-2.png" alt="Splunk-2.png">
+
+  <h2><b></b></h2>
   <p><b></b></p>
-  
-  
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
 </div>
