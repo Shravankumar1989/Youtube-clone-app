@@ -392,22 +392,60 @@
   <p><b>Go to Jenkins Dashboard</b></p>
   <p><b>Click on manage Jenkins --> Plugins --> Available plugins</b></p>
   <p><b>Search for Slack Notification and install</b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
+  <img src="./public/assets/Slack-10.png" alt="Slack-10.png">
+  <p><b>Click on Manage Jenkins --> Credentials --> Global</b></p>
+  <p><b>Select kind as Secret Text</b></p>
+  <p><b>At Secret Section Provide Your Slack integration token credential ID</b></p>
+  <p><b>Id and description are optional and create</b></p>
+  <img src="./public/assets/Slack-8.png" alt="Slack-8.png">
+  <img src="./public/assets/Slack-11.png" alt="Slack-11.png">
+  <p><b>Click on Manage Jenkins --> System</b></p>
+  <p><b>Go to the end of the page</b></p>
+  <p><b>Workspace --> team subdomain</b></p>
+  <p><b>Credential --> Select your Credential for Slack</b></p>
+  <p><b>Default channel --> Provide your Channel name</b></p>
+  <p><b>Test connection</b></p>
+  <img src="./public/assets/Slack-8.png" alt="Slack-8.png">
+  <img src="./public/assets/Slack-12.png" alt="Slack-12.png">
+  <p><b>Click on Apply and save</b></p>
+  <p><b>Add this to the pipeline</b></p>
+  
+  ```sh
+  // Define a map for associating build statuses with Slack message colors
+  def COLOR_MAP = [
+      'FAILURE' : 'danger',
+      'SUCCESS' : 'good'
+  ]
+  
+  // Post-build actions
+  post {
+      // Execute the following block after every build, regardless of the build result
+      always {
+          // Print a message in the Jenkins console log
+          echo 'Slack Notifications'
+  
+          // Send a notification to a Slack channel
+          slackSend (
+              // Specify the channel to send the message to, replace '#channel name' with your actual channel name
+              channel: '#channel name',  
+  
+              // Set the color of the Slack message based on the build result using the COLOR_MAP
+              color: COLOR_MAP[currentBuild.currentResult],
+  
+              // Compose the message with build details and a link to the build
+              message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} \n build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}"
+          )
+      }
+  }
+
+  ```
+  <p><b>You will get a Notification in Slack</b></p>
+
+  <h2><b>Step 5.1 - Start Job</b></h2>
+  <p><b>Go to Jenkins dashboard and click on New Item.</b></p>
+  <p><b>Provide a name for the Job & click on Pipeline and click on OK.</b></p>
+  <h2><b>Step 5.2 - Create a Jenkins shared library in GitHub</b></h2>
+  <p><b>Create a new repository in GitHub named Jenkins_shared_library.</b></p>
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
