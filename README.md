@@ -366,21 +366,32 @@
   <p><b>Sample image.</b></p>
   <img src="./public/assets/Jenkins-25.png" alt="Jenkins-25.png">
   <img src="./public/assets/Jenkins-26.png" alt="Jenkins-26.png">
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
+  <h2><b>Step 4.1 - Integrate Slack for Notifications</b></h2>
+  <p><b>Create a Slack account and create a channel Named Jenkins</b></p>
+  <img src="./public/assets/Slack-1.png" alt="Slack-1.png">
+  <h2><b>Step 4.2 - Install the Jenkins CI app on Slack</b></h2>
+  <p><b>Go to Slack and click on your name</b></p>
+  <p><b>Select Settings and Administration</b></p>
+  <p><b>Click on Manage apps</b></p>
+  <img src="./public/assets/Slack-2.png" alt="Slack-2.png">
+  <p><b>It will open a new tab</b></p>
+  <p><b>Search for Jenkins CI and click on it</b></p>
+  <img src="./public/assets/Slack-3.png" alt="Slack-3.png">
+  <p><b>It will open another tab</b></p>
+  <p><b>Click on Add to Slack</b></p>
+  <img src="./public/assets/Slack-4.png" alt="Slack-4.png">
+  <p><b>Now choose your Slack channel</b></p>
+  <p><b>Click on Add Jenkins CI integration.</b></p>
+  <img src="./public/assets/Slack-6.png" alt="Slack-6.png">
+  <p><b>You will be redirected to this page</b></p>
+  <img src="./public/assets/Slack-7.png" alt="Slack-7.png">
+  <p><b>Copy the team subdomain and integration token credential ID for later use.</b></p>
+  <img src="./public/assets/Slack-8.png" alt="Slack-8.png">
+  <img src="./public/assets/Slack-9.png" alt="Slack-9.png">
+  <h2><b>Install Slack Notification Plugin in Jenkins</b></h2>
+  <p><b>Go to Jenkins Dashboard</b></p>
+  <p><b>Click on manage Jenkins --> Plugins --> Available plugins</b></p>
+  <p><b>Search for Slack Notification and install</b></p>
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
