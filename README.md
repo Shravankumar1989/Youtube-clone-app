@@ -345,12 +345,61 @@
   <img src="./public/assets/Jenkins-22.png" alt="Jenkins-22.png">
   <p><b>Now go to Putty or Mobaxtreme and In Splunk machine run this command</b></p>
 
-   ```sh
+  ```sh
   # Allow traffic on port 8088 through the Ubuntu Firewall (UFW)
   sudo ufw allow 8088
   ```
   <p><b>Now in the Jenkins dashboard Under Splunk click on Test connection</b></p>
-  
+  <img src="./public/assets/Jenkins-27.png" alt="Jenkins-27.png">
+  <h2><b>Restart Both Splunk and Jenkins</b></h2>
+  <p><b>Let's Restart our Splunk machine</b></p>
+  <p><b>Click on Settings --> Server controls</b></p>
+  <img src="./public/assets/Jenkins-23.png" alt="Jenkins-23.png">
+  <p><b>Restart and log in again</b></p>
+  <img src="./public/assets/Jenkins-24.png" alt="Jenkins-24.png">
+  <p><b>Now restart Jenkins and log in again.</b></p>
+
+  ```sh
+  <jenkins-ip:8080/restart> #this will restart jenkins
+  ```
+  <p><b>Now go to Splunk and click on the Jenkins app and you will get this output monitoring</b></p>
+  <p><b>Sample image.</b></p>
+  <img src="./public/assets/Jenkins-25.png" alt="Jenkins-25.png">
+  <img src="./public/assets/Jenkins-26.png" alt="Jenkins-26.png">
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
