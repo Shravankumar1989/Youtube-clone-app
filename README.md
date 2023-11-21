@@ -650,14 +650,75 @@
   <http://jenkins-public-ip:8080>/sonarqube-webhook/
   ```
   <img src="./public/assets/SonarQube-14.png" alt="SonarQube-14.png">
+  <h2><b>Step 6.4 - Add New stages to the pipeline</b></h2>
+  <p><b>Go to vs code and create a file sonarqubeAnalysis.groovy & add the below code and push to Jenkins shared library GitHub Repo.</b></p>
   
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
+  ```sh
+  def call() {
+        withSonarQubeEnv('sonar-server') {
+        sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Youtube -Dsonar.projectKey=Youtube '''
+      }
+  }
+  ```
+  <p><b>Create another file for qualityGate.groovy</b></p>
+
+  ```sh
+    def call(credentialsId) {
+    waitForQualityGate abortPipeline: false, credentialsId: credentialsId   
+  }
+  ```
+  <p><b>Create another file for npmInstall.groovy</b></p>
+
+  ```sh
+    def call() {
+    sh 'npm install'
+  }
+  ```
+  <p><b>Push them to the GitHub Jenkins shared library</b></p>
+
+  ```sh
+  git add .
+  git commit -m "message"
+  git push origin main
+  ```
+  <p><b>Add these stages to the pipeline now</b></p>
+
+  ```sh
+  #under parameters
+  tools{
+        jdk 'jdk17'
+        nodejs 'node16'
+    }
+    environment {
+        SCANNER_HOME=tool 'sonar-scanner'
+    }
+
+    # add in stages
+    stage('sonarqube Analysis'){
+            when { expression { params.action == 'create'}}    
+            steps{
+                sonarqubeAnalysis()
+            }
+        }
+        stage('sonarqube QualitGate'){
+            when { expression { params.action == 'create'}}    
+            steps{
+                script{
+                    def credentialsId = 'Sonar-token'
+                    qualityGate(credentialsId)
+                }
+            }
+        }
+        stage('Npm'){
+          when { expression { params.action == 'create'}}    
+            steps{
+                npmInstall()
+            }
+        }
+
+  ```
+  <p><b>Build now.</b></p>
+  <p><b>Stage view</b></p>
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
