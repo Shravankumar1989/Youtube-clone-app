@@ -599,14 +599,19 @@
   <p><b>Build with parameters and build</b></p>
   <p><b>Stage view</b></p>
   <img src="./public/assets/Jenkins-Stage-1.jpeg" alt="Jenkins-Stage-1.jpeg">
-  <h2><b></b></h2>
-  <h2><b></b></h2>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
+  <h2><b>Step 6 - Install Plugins like JDK, Sonarqube Scanner, NodeJs</b></h2>
+  <h2><b>Step 6.1 - Install Plugin</b></h2>
+  <p><b>Goto Manage Jenkins →Plugins → Available Plugins →</b></p>
+  <p><b>Install below plugins</b></p>
+  <p><b>1 → Eclipse Temurin Installer (Install without restart)</b></p>
+  <p><b>2 → SonarQube Scanner (Install without restart)</b></p>
+  <p><b>3 → NodeJs Plugin (Install Without restart)</b></p>
+  <img src="./public/assets/PlugIn-1.png" alt="PlugIn-1.png">
+  <img src="./public/assets/PlugIn-2.png" alt="PlugIn-2.png">
+  <h2><b>Step 6.2 - Configure Java and Nodejs in Global Tool Configuration</b></h2>
+  <p><b>Goto Manage Jenkins → Tools → Install JDK(17) and NodeJs(16)→ Click on Apply and Save</b></p>
+  <img src="./public/assets/PlugIn-3.png" alt="PlugIn-3.png">
+  <img src="./public/assets/PlugIn-4.png" alt="PlugIn-4.png">
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
