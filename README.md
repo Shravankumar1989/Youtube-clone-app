@@ -446,6 +446,99 @@
   <p><b>Provide a name for the Job & click on Pipeline and click on OK.</b></p>
   <h2><b>Step 5.2 - Create a Jenkins shared library in GitHub</b></h2>
   <p><b>Create a new repository in GitHub named Jenkins_shared_library.</b></p>
+  <img src="./public/assets/GIT-Repo-1.png" alt="GIT-Repo-1.png">
+  <p><b>Connect to your VS Code</b></p>
+  <p><b>Create a directory named Jenkins_shared_library</b></p>
+  <p><b>Create a Vars directory inside it</b></p>
+  <img src="./public/assets/GIT-Repo-2.png" alt="GIT-Repo-2.png">
+  <p><b>Open Terminal</b></p>
+  <p><b>Run the below commands to push to GitHub</b></p>
+
+   ```sh
+   # Create a README.md file and add the initial content
+   echo "# Jenkins_shared_library" >> README.md
+  
+   # Initialize a new Git repository in the current directory
+   git init
+  
+   # Add the README.md file to the staging area
+   git add README.md
+  
+   # Commit the added file with a message
+   git commit -m "first commit"
+  
+   # Rename the default branch to 'main'
+   git branch -M main
+  
+   # Add a remote repository URL for pushing changes. Replace with your actual repository URL
+   # make sure to change your repo Url here
+   git remote add origin https://github.com/Aj7Ay/Jenkins_shared_library.git
+  
+   # Push the changes in the 'main' branch to the remote repository and set it to track the remote 'main' branch
+   git push -u origin main
+
+   ```
+
+  <p><b>Now, Let's Write a Groovy script for our Pipeline</b></p>
+  <p><b>Create a cleanWorkspace.groovy file and add the below code</b></p>
+
+  ```sh
+  // Filename: cleanWorkspace.groovy
+  // Defines a function to clean the workspace
+  
+  // Default 'call' method without parameters, cleans the workspace
+  def call() {
+      cleanWs() // Invokes the cleanWs step to clean up the workspace
+  }
+  ```
+  <p><b>Create checkoutGit.groovy file and add the below code</b></p>
+
+  ```sh
+  // Overloaded 'call' method with parameters for Git operations
+  def call(String gitUrl, String gitBranch) {
+      // Checks out a specific branch from a Git repository
+      checkout([
+          $class: 'GitSCM', // Specifies the SCM as Git
+          branches: [[name: gitBranch]], // Sets the branch to checkout
+          userRemoteConfigs: [[url: gitUrl]] // Sets the Git repository URL
+      ])
+  }
+  ```
+
+  <p><b>Now push them to GitHub using the below commands from vs code</b></p>
+
+  ```sh
+  # Adds all new or modified files to the staging area
+  git add .
+
+  # Commits the staged changes with a message
+  git commit -m "message"
+
+  # Pushes the commit to the 'main' branch of the remote repository
+  git push origin main
+  ```
+  <h2><b>Step 5.3 - Add Jenkins shared library to Jenkins system</b></h2>
+  <p><b>Go to Jenkins Dashboard</b></p>
+  <p><b>Click on Manage Jenkins --> system</b></p>
+  <p><b>Search for Global Pipeline Libraries and click on Add</b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
