@@ -592,8 +592,9 @@
   }
 
   ```
-  <p><b></b></p>
-  <p><b></b></p>
+  <p><b>Build with parameters and build</b></p>
+  <p><b>Stage view</b></p>
+  <img src="./public/assets/Jenkins-Stage-1.jpeg" alt="Jenkins-Stage-1.jpeg">
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
