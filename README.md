@@ -614,6 +614,43 @@
   <img src="./public/assets/PlugIn-4.png" alt="PlugIn-4.png">
   <h2><b>Step 6.3 - Configure Sonar Server in Manage Jenkins</b></h2>
   <p><b>Grab the Public IP Address of your EC2 Instance, Sonarqube works on Port 9000, so <Public IP>:9000. Goto your Sonarqube Server. Click on Administration → Security → Users → Click on Tokens and Update Token → Give it a name → and click on Generate Token</b></p>
+  <img src="./public/assets/SonarQube-5.png" alt="SonarQube-5.png">
+    
+  <p><b>click on update Token</b></p>
+  <img src="./public/assets/SonarQube-6.png" alt="SonarQube-6.png">
+  
+  <p><b>Create a token with a name and generate</b></p>
+  <img src="./public/assets/SonarQube-7.png" alt="SonarQube-7.png">
+  <p><b>copy Token</b></p>
+  <p><b>Goto Jenkins Dashboard → Manage Jenkins → Credentials → Add Secret Text. It should look like this</b></p>
+  <img src="./public/assets/SonarQube-8.png" alt="SonarQube-8.png">
+
+  
+  <p><b>You will this page once you click on create</b></p>
+  <img src="./public/assets/SonarQube-9.png" alt="SonarQube-9.png">
+
+  
+  <p><b>Now, go to Dashboard → Manage Jenkins → System and Add like the below image.</b></p>
+  <img src="./public/assets/SonarQube-10.png" alt="SonarQube-10.png">
+  
+  <p><b>Click on Apply and Save</b></p>
+  <p><b>The Configure System option is used in Jenkins to configure different server</b></p>
+  <p><b>Global Tool Configuration is used to configure different tools that we install using Plugins</b></p>
+  <p><b>We will install a sonar scanner in the tools.</b></p>
+  <img src="./public/assets/SonarQube-11.png" alt="SonarQube-11.png">
+  <p><b>In the Sonarqube Dashboard add a quality gate also</b></p>
+  <p><b>Administration--> Configuration-->Webhooks</b></p>
+  <img src="./public/assets/SonarQube-12.png" alt="SonarQube-12.png">
+  <p><b>Click on Create</b></p>
+  <img src="./public/assets/SonarQube-13.png" alt="SonarQube-13.png">
+  <p><b>Add details</b></p>
+   
+  ```sh
+  #in url section of quality gate
+  <http://jenkins-public-ip:8080>/sonarqube-webhook/
+  ```
+  <img src="./public/assets/SonarQube-14.png" alt="SonarQube-14.png">
+  
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
@@ -624,8 +661,10 @@
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
+  
+  
+  
+  
+  
+  
 </div>
