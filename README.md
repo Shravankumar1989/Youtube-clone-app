@@ -1,5 +1,5 @@
 <div>
-  <h1 align="center"><b>Deploying a YouTube Clone App with DevSecOps and Jenkins Shared Library</b></h1>
+  <h1 align="center"><b>Deploying a YouTube Clone App with DevSecOps and <br/>Jenkins Shared Library</b></h1>
   <img src="./public/assets/CICD-Project-1.png" alt="CICD-Project-1.png">
   <p><b>This blog is your gateway to a secure DevSecOps pipeline for your project. With Kubernetes, Docker, SonarQube, Trivy, OWASP Dependency Check, Prometheus, Grafana, Jenkins (and a shared library), Splunk, Rapid API, Slack notifications, and efficient parameters for creating and destroying your environment, we've got you covered.</b></p>
   <h4>
