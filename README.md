@@ -19,8 +19,8 @@
   <p><b>Step 2.2 - </b>Install Trivy on Jenkins machine</p>
   <p><b>Step 3.1 - </b>Launch an Ubuntu instance for Splunk</p>
   <p><b>Step 3.2 - </b>Install the Splunk app for Jenkins</p>
-  <p><b>Add Splunk Plugin in Jenkins</p>
-  <p><b>Restart Both Splunk and Jenkins</p>
+  <p><b>Add Splunk Plugin in Jenkins</b></p>
+  <p><b>Restart Both Splunk and Jenkins</b></p>
   <p><b>Step 4.1 - </b>Integrate Slack for Notifications</p>
   <p><b>Step 4.2 - </b>Install the Jenkins CI app on Slack</p>
   <p><b>Install Slack Notification Plugin in Jenkins</p>
