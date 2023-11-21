@@ -612,7 +612,8 @@
   <p><b>Goto Manage Jenkins → Tools → Install JDK(17) and NodeJs(16)→ Click on Apply and Save</b></p>
   <img src="./public/assets/PlugIn-3.png" alt="PlugIn-3.png">
   <img src="./public/assets/PlugIn-4.png" alt="PlugIn-4.png">
-  <p><b></b></p>
+  <h2><b>Step 6.3 - Configure Sonar Server in Manage Jenkins</b></h2>
+  <p><b>Grab the Public IP Address of your EC2 Instance, Sonarqube works on Port 9000, so <Public IP>:9000. Goto your Sonarqube Server. Click on Administration → Security → Users → Click on Tokens and Update Token → Give it a name → and click on Generate Token</b></p>
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
