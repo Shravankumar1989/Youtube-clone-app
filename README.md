@@ -719,9 +719,41 @@
   ```
   <p><b>Build now.</b></p>
   <p><b>Stage view</b></p>
+  <img src="./public/assets/SonarQube-15.png" alt="SonarQube-15.png">
+  <p><b>To see the report, you can go to Sonarqube Server and go to Projects.</b></p>
+  <img src="./public/assets/SonarQube-16.png" alt="SonarQube-16.png">
+  <p><b>You can see the report has been generated and the status shows as passed. You can see that there are 517 lines scanned. To see a detailed report, you can go to issues.</b></p>
+  <p><b>Slack Notification</b></p>
+  <img src="./public/assets/Slack-1.png" alt="Slack-1.png">
+
+  <h2><b>Step 7 - Install OWASP Dependency Check Plugins</b></h2>
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+
+  <p><b></b></p>
+  <p><b></b></p>
+
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  <p><b></b></p>
+  
   
   
   
