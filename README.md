@@ -62,46 +62,71 @@
   ```
 
   ```sh
-#!/bin/bash
-# Update the package lists for upgrades and new package installations
-sudo apt update -y
+  #!/bin/bash
+  # Update the package lists for upgrades and new package installations
+  sudo apt update -y
+  
+  # Install the OpenJDK version 11 JDK package
+  sudo apt install openjdk-11-jdk -y
+  
+  # Download the Jenkins repository signing key and save it to '/usr/share/keyrings/jenkins-keyring.asc'
+  sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+    https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+  
+  # Add the Jenkins repository to the system's software sources list
+  echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+    https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+    /etc/apt/sources.list.d/jenkins.list > /dev/null
+  
+  # Update the package lists to include packages from the newly added Jenkins repository
+  sudo apt-get update -y
 
-# Install the OpenJDK version 11 JDK package
-sudo apt install openjdk-11-jdk -y
-
-# Download the Jenkins repository signing key and save it to '/usr/share/keyrings/jenkins-keyring.asc'
-sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
-  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
-
-# Add the Jenkins repository to the system's software sources list
-echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
-  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
-  /etc/apt/sources.list.d/jenkins.list > /dev/null
-
-# Update the package lists to include packages from the newly added Jenkins repository
-sudo apt-get update -y
-
-# Install Jenkins from the added repository
-sudo apt-get install jenkins -y
-
-# Start the Jenkins service
-sudo systemctl start jenkins
-
-# Check and display the status of the Jenkins service
-sudo systemctl status jenkins
+  # Install Jenkins from the added repository
+  sudo apt-get install jenkins -y
+  
+  # Start the Jenkins service
+  sudo systemctl start jenkins
+  
+  # Check and display the status of the Jenkins service
+  sudo systemctl status jenkins
   ```
   
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
-  <p><b></b></p>
+  <p><b>Save and exit the text editor.</b></p>
+  <p><b>Make the script executable:</b></p>
+  
+   ```sh
+  # Grant execute permission to the 'install_jenkins.sh' script
+  sudo chmod +x install_jenkins.sh
+  ```
+  <p><b>Run the script:</b></p>
+  
+  ```sh
+  # Execute the 'install_jenkins.sh' script
+  ./install_jenkins.sh
+  ```
+  <p><b>The script will install Jenkins and start the Jenkins service.</b></p>
+  <p><b>You will need to go to your AWS EC2 Security Group and open Inbound Port 8080 since Jenkins works on Port 8080.</b></p>
+  <p><b>Now, grab your Public IP Address</b></p>
+  
+  ```sh
+  # This line seems to be an indication to check Jenkins on the provided EC2 public IP at port 8080
+  # <EC2 Public IP Address:8080>
+  # Display the initial admin password for Jenkins
+  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+  ```
+
+  <img src="./public/assets/Jenkins-1.png" alt="Jenkins-1.png">
+  <p><b>Now, install the suggested plugins.</b></p>
+  <img src="./public/assets/Jenkins-3.png" alt="Jenkins-3.png">
+  <p><b>Jenkins will now get installed and install all the libraries.</b></p>
+  <p><b>Create an admin user</b></p>
+  <img src="./public/assets/Jenkins-5.png" alt="Jenkins-5.png">
+  <p><b>Click on save and continue.</b></p>
+  <p><b>Jenkins Dashboard</b></p>
+  <img src="./public/assets/Jenkins-8.png" alt="Jenkins-8.png">
+
+
+  
   <p><b></b></p>
   <p><b></b></p>
   <p><b></b></p>
